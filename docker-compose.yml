@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./other-gm-front/code
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: ./gm-back/server
+      dockerfile: Dockerfile
+    environment:
+      ACCESS_TOKEN_SECRET: "1080dc7dc6b87d2d4ad6cd6b7766365a008c8da4f7d1c808ec0c7babd5a6f32fde8349bca68e80dd2672fc1b0702557d8a7d60ca3d174d54e7df1b9bf9505a99"
+      REFRESH_TOKEN_SECRET: "1080dc7dc6b87d2d4ad6cd6b7766365a008c8da4f7d1c808ec0c7babd5a6f32fde8349bca68e80dd2672fc1b0702557d8a7d60ca3d174d54e7df1b9bf9505a89"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    volumes:
+      - ./gm-back/server:/app
+    command: npm start
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "bananabread420!"
+      MYSQL_DATABASE: "game_manager3"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql-data:
