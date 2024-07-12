@@ -3,7 +3,7 @@ export const GameCard = ({ name, description, developer, price }) => {
   return (
     <div className='wrapper-card' style={{ width: 'max-content' }}>
       <div style={{ overflow: 'visible' }} className='img-wrapper-tile'>
-        <img src="https://static.vecteezy.com/system/resources/previews/010/807/101/non_2x/game-control-pixel-art-free-vector.jpg"></img>
+        <img src="/controller.jpg" alt="Game Control Pixel Art"></img>
       </div>
       <div className='content-card'>
         <h3>{name}</h3>

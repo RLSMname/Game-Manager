@@ -10,6 +10,13 @@ import createStore from 'react-auth-kit/createStore';
 import { GamesHomeInfiniteScroll } from './pages/games/GamesHomeInfiniteScroll';
 
 import { ChartPage } from './pages/ChartPage';
+import { GodotGamesPage } from './pages/special/GodotGamesPage';
+import { ShmupGame } from './pages/special/ShmupGame';
+import { TankGame } from './pages/special/TankGame';
+import { CatchGame } from './pages/special/CatchGame';
+import { PlatformerGame } from './pages/special/PlatformerGame';
+
+
 
 function App() {
   const store = createStore({
@@ -35,6 +42,12 @@ function App() {
 
                 < ChartPage></ChartPage>}>
               </Route>
+
+              <Route path='/special' element={<GodotGamesPage />}></Route>
+              <Route path='/special/c' element={<CatchGame />}></Route>
+              <Route path='/special/p' element={<PlatformerGame />}></Route>
+              <Route path='/special/t' element={<TankGame />}></Route>
+              <Route path='/special/s' element={<ShmupGame />}></Route>
 
             </Routes>
           </SocketProvider>

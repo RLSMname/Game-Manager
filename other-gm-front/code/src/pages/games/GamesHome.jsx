@@ -18,6 +18,8 @@ export const GamesHome = () => {
         <Link className='button-style-1' to="/pie">Diagram</Link>
         <br></br>
         <Link className='button-style-1' to="/devs">Developers</Link>
+        <br></br>
+        <Link className='button-style-1' to="/special">Special Games</Link>
       </div>
       <GameListRenderer />
     </GamesProvider>

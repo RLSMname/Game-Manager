@@ -100,7 +100,7 @@ export const GameListRenderer = () => {
                                     <GameTile id={game.id} name={game.name} />
                                     <div style={{ display: 'flex', alignItems: '' }} >
                                         <div className='img-wrapper-tile'>
-                                            <img src="https://static.vecteezy.com/system/resources/previews/010/807/101/non_2x/game-control-pixel-art-free-vector.jpg"></img>
+                                            <img src="/controller.jpg" alt="Game Control Pixel Art"></img>
                                         </div>
                                         <div className='btn-wrapper-list'>
                                             <button className='button-style-1' onClick={() => handleEditClick(game.id)}>Edit</button>
